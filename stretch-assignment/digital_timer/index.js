@@ -2,29 +2,19 @@ const msTens = document.getElementById('msTens');
 const msHundreds = document.getElementById('msHundreds');
 const secondOnes = document.getElementById('secondOnes');
 const secondTens = document.getElementById('secondTens');
-secondTens.textContent = "0";
-secondOnes.textContent = "0";
-msTens.textContent = "0";
-msHundreds.textContent = "0";
 const digits = document.querySelector('.digits');
 
-const buttons = document.createElement('div');
-document.body.appendChild(buttons);
-const startButton = document.createElement('button');
-const resetButton = document.createElement('button');
-startButton.textContent = "Start";
-resetButton.textContent = "Reset";
-buttons.appendChild(startButton);
-buttons.appendChild(resetButton);
-
 let start;
+const startButton = document.querySelector('.start');
 startButton.addEventListener('click', () => {
 	start = window.setInterval(timer, 10);
 	startButton.disabled = "true";
 });
 
+const resetButton = document.querySelector('.reset');
 resetButton.addEventListener('click', () => {
 	clearInterval(start);
+	digits.classList.remove('redDigit');
 	startButton.disabled = '';
 	secondTens.textContent = "0";
 	secondOnes.textContent = "0";
@@ -44,12 +34,10 @@ function timer() {
 			if (Number(secondOnes.textContent) < 9) {
 				secondOnes.textContent = Number(secondOnes.textContent) + 1;
 			} else {
-				digits.classList.toggle("redDigit");
+				clearInterval(start);
 				secondOnes.textContent = "0";
 				secondTens.textContent = "1";
-				startButton.disabled = "";
-				clearInterval(start);
-
+				digits.classList.add("redDigit");
 			}
 		}
 	}
