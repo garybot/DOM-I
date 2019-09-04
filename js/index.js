@@ -85,3 +85,17 @@ addressFields[2].textContent = siteContent.contact.email;
 // footer 
 
 document.querySelector('footer p').textContent = siteContent.footer.copyright;
+
+// Task 3
+
+
+let newLink = document.createElement('a');
+newLink.href = "#";
+newLink.textContent = "New Link";
+let anotherLink = document.createElement('a');
+anotherLink.href = "#";
+anotherLink.textContent = "Another Link";
+document.querySelector('nav').append(newLink);
+document.querySelector('nav').append(anotherLink);
+
+document.querySelectorAll('nav a').forEach(element => element.style.color = "green");
