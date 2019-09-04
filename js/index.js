@@ -99,3 +99,39 @@ document.querySelector('nav').append(newLink);
 document.querySelector('nav').append(anotherLink);
 
 document.querySelectorAll('nav a').forEach(element => element.style.color = "green");
+
+const stretchData = {
+  "h4": "Now You See Me!",
+  "content": "More than just a movie...",
+  "img-src": "img/stretch.jpeg",
+};
+
+const stretchButton = document.createElement('button');
+stretchButton.textContent = "Click Me";
+stretchButton.style.margin = "10px auto";
+stretchButton.style.padding = "10px 30px";
+document.querySelector(".main-content").append(stretchButton);
+
+const aDiv = document.createElement('div');
+const aHeading = document.createElement('h4');
+const someText = document.createElement('p');
+const anImg = document.createElement('img');
+aDiv.style.textAlign = "center";
+aDiv.style.display = "none";
+anImg.style.maxWidth = "50%";
+aDiv.appendChild(aHeading);
+aDiv.appendChild(anImg);
+aDiv.appendChild(someText);
+document.querySelector('.main-content').appendChild(aDiv);
+
+stretchButton.addEventListener('click', event => {
+  aHeading.textContent = stretchData.h4;
+  someText.textContent = stretchData.content;
+  anImg.src = stretchData["img-src"];
+  if (aDiv.style.display !== "none") {
+    aDiv.style.display = "none";
+  } else {
+    stretchButton.textContent = "Click Again!";
+    aDiv.style.display = "block";
+  }
+});
