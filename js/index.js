@@ -90,8 +90,8 @@ document.querySelector('footer p').textContent = siteContent.footer.copyright;
 
 
 let newLink = document.createElement('a');
-newLink.href = "#";
-newLink.textContent = "New Link";
+newLink.href = "./stretch-assignment/digital_timer/index.html";
+newLink.textContent = "Timer";
 let anotherLink = document.createElement('a');
 anotherLink.href = "#";
 anotherLink.textContent = "Another Link";
