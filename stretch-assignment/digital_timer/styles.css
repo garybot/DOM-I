@@ -1,41 +1,52 @@
 body {
+}
+
+.timer {
+  width: 350px;
+  margin: 0 auto;
+  background-color: slategray;
+  color: ivory;
+  border-radius: 8px;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
 }
 
 .digit {
   display: inline-block;
   font-size: 80px;
+  font-weight: bold;
 }
 
 .redDigit {
-  color: red;
+  color: crimson;
 }
 
 .buttons {
-	display: flex;
-	flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  margin-left: 5px;
 }
 
 .button {
-	width: 100px;
-	padding: 5px;
-	border: none;
-	border-radius: 3px;
-	color: ivory;
-	font-weight: bold;
+  width: 100px;
+  padding: 5px;
+  border: none;
+  border-radius: 3px;
+  color: ivory;
+  font-weight: bold;
 }
 
 .start {
-	background-color: green;
-	margin-bottom: 5px;
+  background-color: green;
+  margin-bottom: 5px;
 }
 
 .start:disabled {
-	background-color: gray;
+  background-color: lightgray;
+  color: crimson;
 }
 
 .reset {
-	background-color: red;
+  background-color: crimson;
 }
