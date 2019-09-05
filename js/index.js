@@ -43,12 +43,9 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 
 // nav
 const navItems = document.querySelectorAll('a');
-navItems[0].textContent = siteContent.nav["nav-item-1"];
-navItems[1].textContent = siteContent.nav["nav-item-2"];
-navItems[2].textContent = siteContent.nav["nav-item-3"];
-navItems[3].textContent = siteContent.nav["nav-item-4"];
-navItems[4].textContent = siteContent.nav["nav-item-5"];
-navItems[5].textContent = siteContent.nav["nav-item-6"];
+navItems.forEach((item, i) => {
+  item.textContent = siteContent.nav[`nav-item-${i + 1}`];
+})
 
 // cta
 document.querySelector('.cta-text h1').textContent = siteContent.cta.h1;
@@ -56,20 +53,17 @@ document.querySelector('.cta-text button').textContent = siteContent.cta.button;
 document.getElementById('cta-img').src = siteContent['cta']['img-src'];
 
 // main
-
+const sectionNames = ['features', 'about', 'services', 'product', 'vision']
 const headings = document.querySelectorAll('.text-content h4');
-headings[0].textContent = siteContent["main-content"]["features-h4"];
-headings[1].textContent = siteContent["main-content"]["about-h4"];
-headings[2].textContent = siteContent["main-content"]["services-h4"];
-headings[3].textContent = siteContent["main-content"]["product-h4"];
-headings[4].textContent = siteContent["main-content"]["vision-h4"];
-
 const content = document.querySelectorAll('.text-content p');
-content[0].textContent = siteContent["main-content"]["features-content"];
-content[1].textContent = siteContent["main-content"]["about-content"];
-content[2].textContent = siteContent["main-content"]["services-content"];
-content[3].textContent = siteContent["main-content"]["product-content"];
-content[4].textContent = siteContent["main-content"]["vision-content"];
+
+headings.forEach((item, i) => {
+  item.textContent = siteContent["main-content"][`${sectionNames[i]}-h4`];
+})
+
+content.forEach((item, i) => {
+  item.textContent = siteContent["main-content"][`${sectionNames[i]}-content`];
+})
 
 document.getElementById('middle-img').src = siteContent["main-content"]["middle-img-src"];
 
